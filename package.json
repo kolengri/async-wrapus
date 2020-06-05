@@ -3,7 +3,7 @@
   "author": "Grigoriy Kolenko",
   "homepage": "https://github.com/kolengri/async-wrapus",
   "repository": "kolengri/async-wrapus",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "MIT",
   "module": "dist/async-wrapus.esm.js",
   "main": "dist/index.js",
