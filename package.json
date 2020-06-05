@@ -1,6 +1,11 @@
 {
+  "name": "async-wrapus",
+  "author": "Grigoriy Kolenko",
+  "homepage": "https://github.com/kolengri/async-wrapus",
+  "repository": "kolengri/async-wrapus",
   "version": "1.0.1",
   "license": "MIT",
+  "module": "dist/async-wrapus.esm.js",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
@@ -35,9 +40,6 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "async-wrapus",
-  "author": "Grigoriy Kolenko",
-  "module": "dist/async-wrapus.esm.js",
   "devDependencies": {
     "husky": "^4.2.5",
     "tsdx": "^0.13.2",
