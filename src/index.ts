@@ -1,4 +1,4 @@
-export const asyncWrap = async <T, ERR = any>(
+export const asyncWrap = async <T, ERR = Error>(
   promise: Promise<T>
 ): Promise<[ERR | null, T | null]> => {
   try {
