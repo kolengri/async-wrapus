@@ -1,5 +1,8 @@
 # async-wrapus
 
+Wrapper for async functions without pain.
+No try catches anymore.
+
 [![NPM](https://img.shields.io/npm/v/async-wrapus.svg)](https://www.npmjs.com/package/async-wrapus)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![Badges](https://badgen.net/npm/license/async-wrapus)](https://www.npmjs.com/package/async-wrapus)
@@ -10,9 +13,6 @@
 [![Badges](https://badgen.net/bundlephobia/minzip/async-wrapus)](https://bundlephobia.com/result?p=async-wrapus)
 
 ## Description
-
-Wrapper for async functions without pain.
-No try catches anymore.
 
 Wrapper returns array of Error object and Result.
 In case function throws no exception it will return `[null, resultObject]`.
