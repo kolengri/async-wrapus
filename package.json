@@ -2,6 +2,16 @@
   "name": "async-wrapus",
   "author": "Grigoriy Kolenko",
   "homepage": "https://github.com/kolengri/async-wrapus",
+  "keywords": [
+    "async",
+    "promise",
+    "helper",
+    "try catch",
+    "util",
+    "tiny",
+    "typescript",
+    "error handling"
+  ],
   "repository": "kolengri/async-wrapus",
   "version": "1.0.3",
   "license": "MIT",
