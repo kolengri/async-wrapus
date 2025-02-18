@@ -1,23 +1,25 @@
 {
-  "include": ["src", "types"],
   "compilerOptions": {
+    "lib": ["ESNext"],
     "module": "esnext",
-    "lib": ["dom", "esnext"],
-    "importHelpers": true,
+    "target": "esnext",
+    "moduleResolution": "bundler",
+    "moduleDetection": "force",
+    "allowJs": true,
     "declaration": true,
-    "sourceMap": true,
-    "rootDir": "./src",
+    "emitDeclarationOnly": true,
+    "outDir": "./dist",
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "moduleResolution": "node",
-    "baseUrl": "./",
-    "paths": {
-      "*": ["src/*", "node_modules/*"]
-    },
-    "jsx": "react",
-    "esModuleInterop": true
-  }
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "tests",
+    "**/*.test.ts",
+    "**/*.spec.ts",
+    "**/__tests__/**"
+  ]
 }
