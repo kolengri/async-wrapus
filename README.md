@@ -91,6 +91,23 @@ const batchOperation = async () => {
     // Handle errors
   }
 };
+
+
+// Using with Promise.all
+const batchOperation = async () => {
+  const operations = [
+    api.operation1(),
+    api.operation2(),
+    api.operation3()
+  ].map(asyncWrap);
+  
+  const results = await Promise.all(operations);
+  
+  // Check if any operation failed
+  const hasError = results.some(([error]) => error !== null);
+  if (hasError) {
+    // Handle errors
+  }
 ```
 
 ## Return Type
