@@ -77,10 +77,11 @@ const complexOperation = async () => {
 
 // Using with Promise.all
 const batchOperation = async () => {
+  
   const operations = [
-    asyncWrap(api.operation1()),
-    asyncWrap(api.operation2()),
-    asyncWrap(api.operation3())
+    Promise.resolve("test"),
+    Promise.reject("reject"),
+    Promise.resolve("test"),
   ];
   
   const [error, results] = await asyncWrap(Promise.all(operations));
