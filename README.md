@@ -86,8 +86,7 @@ const batchOperation = async () => {
   const [error, results] = await asyncWrap(Promise.all(operations));
   
   // Check if any operation failed
-  const hasError = results.some(([error]) => error !== null);
-  if (hasError) {
+  if (error) {
     // Handle errors
   }
 };

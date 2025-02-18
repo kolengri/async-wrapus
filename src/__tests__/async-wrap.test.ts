@@ -65,9 +65,57 @@ describe(asyncWrap.name, () => {
     expect(result).toEqual(mockResponse);
   });
 
+  // Test with Promise.all successful resolution
+  test('should handle Promise.all successful resolution', async () => {
+    const promises = [
+      Promise.resolve(1),
+      Promise.resolve(2),
+      Promise.resolve(3)
+    ];
+    
+    const [error, result] = await asyncWrap(Promise.all(promises));
+    
+    expect(error).toBeNull();
+    expect(result).toEqual([1, 2, 3]);
+  });
 
-// Test return type for successful Promise
-test("type: should handle successful Promise", async () => {
+  // Test with Promise.all rejection
+  test('should handle Promise.all rejection', async () => {
+    const errorMessage = 'promise.all error';
+    const promises = [
+      Promise.resolve(1),
+      Promise.reject(new Error(errorMessage)),
+      Promise.resolve(3)
+    ];
+    
+    const [error, result] = await asyncWrap(Promise.all(promises));
+    
+    expect(error).toBeInstanceOf(Error);
+    expect(error?.message).toBe(errorMessage);
+    expect(result).toBeNull();
+  });
+
+  // Test type safety with Promise.all
+  test('type: should handle Promise.all with typed arrays', async () => {
+    interface Item {
+      id: number;
+      value: string;
+    }
+    
+    const items: Item[] = [
+      { id: 1, value: 'one' },
+      { id: 2, value: 'two' }
+    ];
+    
+    const promises = items.map(item => Promise.resolve(item));
+    const [error, result] = await asyncWrap<Item[]>(Promise.all(promises));
+    
+    expect<null>(error).toBeNull();
+    expect<Item[] | null>(result).toEqual(items);
+  });
+
+  // Test return type for successful Promise
+  test("type: should handle successful Promise", async () => {
     const [error, result] = await asyncWrap(Promise.resolve('test'));
     expect<null>(error).toBeNull();
     expect<string | null>(result).toBe('test');
